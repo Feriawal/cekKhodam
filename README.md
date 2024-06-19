@@ -1,0 +1,2 @@
+# cekKhodam
+untuk cek khodam 
