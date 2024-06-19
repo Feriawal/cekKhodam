@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CEK KHODAM</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f8ff; /* AliceBlue */
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      main {
+        position: relative;
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+      }
+      h2 {
+        color: #007acc; /* Blue */
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        color: #005f99; /* Darker Blue */
+      }
+      input[type="text"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        border: 1px solid #007acc; /* Blue */
+        border-radius: 5px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #007acc;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      h4 {
+        color: #005f99; /* Darker Blue */
+        margin-top: 20px;
+      }
+      #result {
+        margin-top: 10px;
+        font-weight: bold;
+        color: #007acc;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h2>CEK KHODAM ONLINE</h2>
+      <label for="input Nama">Masukkan Nama</label>
+      <input id="inputNama" type="text" />
+      <!-- <input type="submit" /> -->
+      <button onclick="cekKhodam()">Submit</button>
+      <h4>KHODAM :</h4>
+
+      <div id="result"></div>
+    </main>
+
+    <script>
+      const khodamList = [
+        "Putu",
+        "Macan Tutul",
+        "Kalomang",
+        "Undur-undur",
+        "Udang Rebus",
+        "Burung Gagak",
+        "Kepala Ikan",
+        "Ular Berkepala Dua",
+        "Nyai Roro Kidul",
+        "Prabu Siliwangi",
+        "Sari Murni",
+        "Nutrisari",
+        "Semuta Rangrang",
+        "Katak Bizher",
+      ];
+
+      function getRandomElement(array) {
+        const randomIndex = Math.floor(Math.random() * array.length);
+        return array[randomIndex];
+      }
+
+      function cekKhodam() {
+        const nama = document.getElementById("inputNama").value;
+        if (nama.trim() !== "") {
+          const hasil = getRandomElement(khodamList);
+          document.getElementById("result").innerText = `${hasil}`;
+        } else {
+          document.getElementById("result").innerText =
+            "Masukkan nama terlebih dahulu!";
+        }
+      }
+    </script>
+  </body>
+</html>
